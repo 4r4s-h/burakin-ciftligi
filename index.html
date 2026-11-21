@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Burak'ın Çiftliği">
 <meta property="og:title" content="Burak'ın Çiftliği">
-<meta property="og:description" content="Köy tereyağı, peynir çeşitleri, sucuk, pastırma ve bal. Çiftlikten sofranıza.">
+<meta property="og:description" content="Köy tereyağı, peynir çeşitleri, sucuk, pastırma, dana ve kuzu eti, bal. Çiftlikten sofranıza.">
 <meta property="og:url" content="https://4r4s-h.github.io/burakin-ciftligi/">
 <meta property="og:image" content="https://4r4s-h.github.io/burakin-ciftligi/img/onizleme.jpg">
 <meta property="og:image:width" content="1200">
@@ -115,9 +115,11 @@ header{position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--b
 .hero-farm .badges span::before{color:#cfe3b8}
 .btn.ghost.light{color:#fff; border-color:rgba(255,255,255,.6)}
 .cats{padding:var(--s5) 0 0}
-.cat-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--s3)}
+.cat-grid{display:grid; grid-template-columns:repeat(5, 1fr); gap:var(--s3)}
 .cat-grid .tile{min-height:200px}
-@media (max-width:860px){.cat-grid{grid-template-columns:1fr 1fr} .cat-grid .tile{min-height:150px}}
+@media (max-width:860px){.cat-grid{grid-template-columns:1fr 1fr} .cat-grid .tile{min-height:150px} .cat-grid .tile:last-child{grid-column:span 2}}
+.ship-warn{margin:0; font-size:.9rem; background:var(--bg); border:1px solid var(--leaf); color:var(--ink); border-radius:10px; padding:var(--s2) var(--s3)}
+.ship{align-self:flex-start; font-size:.8rem; font-weight:600; color:var(--leaf); border:1px solid currentColor; border-radius:999px; padding:2px 10px}
 
 /* Then & now */
 .then-now{display:grid; grid-template-columns:1fr 1fr; gap:var(--s3); align-items:start}
@@ -130,7 +132,8 @@ header{position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--b
 .card .body{padding:var(--s3) var(--s3) var(--s4); display:flex; flex-direction:column; gap:var(--s2); flex:1}
 .card h3{margin:0}
 .card p{color:var(--muted); font-size:.95rem; margin:0; flex:1}
-.card .row{display:flex; justify-content:space-between; align-items:center; gap:var(--s2); margin-top:var(--s2)}
+.card .row{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:var(--s2); margin-top:var(--s2)}
+.price small, .card .btn{white-space:nowrap}
 .price{font-family:var(--f-display); font-weight:700; font-size:1.3rem}
 .price small{font-family:var(--f-body); font-weight:400; font-size:.85rem; color:var(--muted)}
 .card .btn{padding:9px 16px; font-size:.92rem}
@@ -203,7 +206,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
     <div class="wrap">
       <div class="eyebrow">Çiftlikten sofranıza</div>
       <h1 id="hero-h">Gerçek tereyağı, olgun peynir, bildiğiniz tat.</h1>
-      <p class="lead">Kendi hayvanlarımızın sütünden yaptığımız tereyağı ve peynirleri, geleneksel yöntemlerle hazırlanan sucuk, pastırma ve süzme balı doğrudan size gönderiyoruz.</p>
+      <p class="lead">Kendi hayvanlarımızın sütünden yaptığımız tereyağı ve peynirleri, geleneksel yöntemlerle hazırlanan sucuk ve pastırmayı, dana ve kuzu etini, süzme balı doğrudan size gönderiyoruz.</p>
       <div class="hero-actions">
         <a class="btn" href="#urunler">Ürünleri incele</a>
         <a class="btn ghost light" href="#siparis">Nasıl sipariş verilir?</a>
@@ -217,6 +220,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
       <a class="tile" href="#urunler" data-go="tereyagi"><img src="img/tereyagi.jpg" alt="Tabakta taze tereyağı ve köy ekmeği"><span>Tereyağı<small>Yayıkta çalkalanmış</small></span></a>
       <a class="tile" href="#urunler" data-go="peynir"><img src="img/kahvalti.jpg" alt="Beyaz peynir, kaşar, zeytin ve domatesle kahvaltı tabağı"><span>Peynir<small>Olgunlaştırılmış</small></span></a>
       <a class="tile" href="#urunler" data-go="sarkuteri"><img src="img/sarkuteri.jpg" alt="Kurumaya asılmış sucuk ve et ürünleri"><span>Şarküteri<small>Sucuk ve pastırma</small></span></a>
+      <a class="tile" href="#urunler" data-go="et"><img src="img/antrikot.jpg" alt="Ahşap tahtada çiğ dana antrikot"><span>Et<small>Dana ve kuzu</small></span></a>
       <a class="tile" href="#urunler" data-go="bal"><img src="img/bal.jpg" alt="Çiçekler arasında bir kavanoz bal"><span>Bal<small>Süzme ve petek</small></span></a>
     </div>
   </section>
@@ -233,11 +237,12 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
           <button type="button" data-cat="tereyagi" aria-pressed="false">Tereyağı</button>
           <button type="button" data-cat="peynir" aria-pressed="false">Peynir</button>
           <button type="button" data-cat="sarkuteri" aria-pressed="false">Şarküteri</button>
+          <button type="button" data-cat="et" aria-pressed="false">Et</button>
           <button type="button" data-cat="bal" aria-pressed="false">Bal</button>
         </div>
       </div>
       <div class="grid" id="product-grid"></div>
-      <p class="note">Fiyatlara KDV dahildir. Stok durumu mevsime göre değişebilir; siparişinizi onaylarken size bilgi veririz.</p>
+      <p class="note">Et ürünleri kilogramla satılır; sepette her adet 1 kg'dır. Taze et soğuk zincir gerektirdiği için yalnızca Erzurum içine teslim edilir. Fiyatlara KDV dahildir. Stok durumu mevsime göre değişebilir; siparişinizi onaylarken size bilgi veririz.</p>
     </div>
   </section>
 
@@ -281,6 +286,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
       <div>
         <details><summary>Kargo ne kadar sürer?</summary><p>Siparişler genellikle 1–2 iş günü içinde kargoya verilir ve çoğu ile 1–3 iş gününde ulaşır.</p></details>
         <details><summary>Ürünler bozulmadan gelir mi?</summary><p>Tereyağı, peynir ve şarküteri ürünlerini buz aküleriyle, yalıtımlı kutularda gönderiyoruz.</p></details>
+        <details><summary>Et ürünlerini her yere gönderiyor musunuz?</summary><p>Hayır. Taze et soğuk zincir gerektirdiği için dana ve kuzu etini yalnızca Erzurum içine, kendi soğutmalı aracımızla teslim ediyoruz. Tereyağı, peynir, şarküteri ve bal ürünlerini Türkiye'nin her yerine kargoluyoruz.</p></details>
         <details><summary>Ödemeyi nasıl yapıyorum?</summary><p>Siparişinizi onayladıktan sonra havale/EFT ile ödeme yapabilirsiniz. Diğer seçenekleri WhatsApp'tan sorabilirsiniz.</p></details>
         <details><summary>Ücretsiz kargo var mı?</summary><p>Belirli bir tutarın üzerindeki siparişlerde kargo ücretsizdir. Güncel limiti sipariş sırasında iletiyoruz.</p></details>
       </div>
@@ -305,7 +311,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
 
 <footer>
   <div class="wrap">© <span id="year"></span> Burak'ın Çiftliği. Tüm hakları saklıdır.
-    <p class="credits">Fotoğraflar: Marine Le Gac, Victoria Morgan, Lee Vue, Edi Libedinsky, Anita Austvika, Cristina Marin, Wolfgang Hasselmann, Konrad Nowacki, Katrin Leinfellner / <a href="https://unsplash.com">Unsplash</a>; Tugay Aydın / <a href="https://www.pexels.com">Pexels</a></p>
+    <p class="credits">Fotoğraflar: Marine Le Gac, Victoria Morgan, Lee Vue, Edi Libedinsky, Anita Austvika, Cristina Marin, Wolfgang Hasselmann, Konrad Nowacki, Katrin Leinfellner, Cindie Hansen ve diğer fotoğrafçılar / <a href="https://unsplash.com">Unsplash</a>; Tugay Aydın ve diğer fotoğrafçılar / <a href="https://www.pexels.com">Pexels</a></p>
   </div>
 </footer>
 
@@ -318,6 +324,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
     </div>
     <div class="drawer-items" id="cart-items"></div>
     <div class="drawer-foot">
+      <p class="ship-warn" id="ship-warn" hidden>Sepetinizde taze et var: et ürünleri yalnızca <strong>Erzurum içine</strong> teslim edilir.</p>
       <div class="total"><span>Toplam</span><span id="cart-total">0 ₺</span></div>
       <label for="cart-note">Not (isteğe bağlı)
         <textarea id="cart-note" placeholder="Örn. teslimat günü tercihi"></textarea>
@@ -340,15 +347,20 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
     {id:'peynir-beyaz',  cat:'peynir',    name:'Tam Yağlı Beyaz Peynir',unit:'1 kg', price:520, desc:'Salamurada en az altı ay dinlendirilmiş.', img:'kahvalti.jpg', alt:'Kahvaltı tabağında beyaz peynir'},
     {id:'peynir-kasar',  cat:'peynir',    name:'Eski Kaşar',          unit:'500 g', price:390, desc:'Bir yıl olgunlaşmış, keskin ve aromatik.', img:'peynir.jpg', alt:'Ahşap tahtada kaşar ve peynir dilimleri'},
     {id:'peynir-tulum',  cat:'peynir',    name:'Tulum Peyniri',       unit:'500 g', price:360, desc:'Ufalanan dokusu ve yoğun tadıyla kahvaltıların yıldızı.', img:'kahvalti.jpg', alt:'Kahvaltı tabağında peynir çeşitleri'},
-    {id:'peynir-orgu',   cat:'peynir',    name:'Örgü Peyniri',        unit:'500 g', price:280, desc:'El ile örülmüş, çörekotlu.', img:'peynir.jpg', alt:'Ahşap tahtada peynir çeşitleri'},
+    {id:'peynir-orgu',   cat:'peynir',    name:'Örgü Peyniri',        unit:'500 g', price:280, desc:'El ile örülmüş, çörekotlu.', img:'orgu.jpg', alt:'Ahşap tahtada beyaz örgü peyniri'},
     {id:'sucuk-kasap',   cat:'sarkuteri', name:'Kasap Sucuk',         unit:'500 g', price:450, desc:'Dana etinden, bol baharatlı, doğal bağırsakta kurutulmuş.', img:'sucuk.jpg', alt:'Ahşap tahtada at nalı sucuk ve sucuk dilimleri'},
     {id:'pastirma',      cat:'sarkuteri', name:'Pastırma',            unit:'250 g', price:520, desc:'Çemeni bol, ince dilimlenmiş dana pastırma.', img:'sarkuteri.jpg', alt:'Kurumaya asılmış et ürünleri'},
     {id:'kavurma',       cat:'sarkuteri', name:'Kavurma',             unit:'500 g', price:600, desc:'Kendi yağında pişirilmiş, vakumlu paketlenmiş.', img:'sarkuteri.jpg', alt:'Şarküteri ürünleri'},
+    {id:'dana-antrikot', cat:'et',        name:'Dana Antrikot',       unit:'1 kg',  price:1100, desc:'Mermer desenli, dinlendirilmiş; ızgara ve tava için.', img:'antrikot.jpg', alt:'Ahşap tahtada çiğ dana antrikot', note:'Yalnızca Erzurum içi teslimat'},
+    {id:'dana-bonfile',  cat:'et',        name:'Dana Bonfile',        unit:'1 kg',  price:1350, desc:'En yumuşak parça; madalyon ya da bütün olarak.', img:'bonfile.jpg', alt:'Tahtada kalın dilim çiğ dana eti', note:'Yalnızca Erzurum içi teslimat'},
+    {id:'dana-kaburga',  cat:'et',        name:'Dana Kaburga',        unit:'1 kg',  price:750, desc:'Kemikli; fırın ve uzun pişirme yemekleri için.', img:'kaburga.jpg', alt:'Tepside kemikli çiğ dana kaburga', note:'Yalnızca Erzurum içi teslimat'},
+    {id:'kuzu-pirzola',  cat:'et',        name:'Kuzu Pirzola',        unit:'1 kg',  price:1200, desc:'Kuzu kafesinden, porsiyonluk kesilmiş.', img:'kuzu.jpg', alt:'Biberiyeli çiğ kuzu pirzola', note:'Yalnızca Erzurum içi teslimat'},
+    {id:'kuzu-kusbasi',  cat:'et',        name:'Kuzu Kuşbaşı',        unit:'1 kg',  price:950, desc:'Kuzu butundan, sinirleri ayıklanmış.', img:'kusbasi.jpg', alt:'Tahtada kuşbaşı doğranmış çiğ et', note:'Yalnızca Erzurum içi teslimat'},
     {id:'bal-cicek',     cat:'bal',       name:'Süzme Çiçek Balı',    unit:'850 g', price:550, desc:'Yayla çiçeklerinden, ısıl işlem görmemiş.', img:'bal.jpg', alt:'Çiçekler arasında süzme bal kavanozu'},
     {id:'bal-kestane',   cat:'bal',       name:'Kestane Balı',        unit:'850 g', price:750, desc:'Koyu renkli, hafif acımsı ve mineral açısından zengin.', img:'bal.jpg', alt:'Kavanozda koyu renkli bal'},
     {id:'bal-petek',     cat:'bal',       name:'Petek Bal',           unit:'1 kg',  price:900, desc:'Çerçeveden kesilmiş, doğal haliyle.', img:'petek.jpg', alt:'Yakın çekim petek bal'}
   ];
-  var CAT_LABEL = {tereyagi:'Tereyağı', peynir:'Peynir', sarkuteri:'Şarküteri', bal:'Bal'};
+  var CAT_LABEL = {tereyagi:'Tereyağı', peynir:'Peynir', sarkuteri:'Şarküteri', et:'Et', bal:'Bal'};
 
   var $ = function(id){ return document.getElementById(id); };
   var fmt = new Intl.NumberFormat('tr-TR');
@@ -366,7 +378,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
   grid.innerHTML = PRODUCTS.map(function(p){
     return '<article class="card" data-cat="'+p.cat+'">' +
       '<div class="photo"><img src="img/'+p.img+'" alt="'+p.alt+'" loading="lazy" width="1000" height="666"><span class="tag">'+CAT_LABEL[p.cat]+'</span></div>' +
-      '<div class="body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>' +
+      '<div class="body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>' + (p.note ? '<span class="ship">'+p.note+'</span>' : '') +
       '<div class="row"><span class="price">'+money(p.price)+' <small>/ '+p.unit+'</small></span>' +
       '<button class="btn" type="button" data-add="'+p.id+'" aria-label="'+p.name+' sepete ekle">Sepete ekle</button></div></div></article>';
   }).join('');
@@ -398,6 +410,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
     $('cart-count').textContent = count;
     $('cart-total').textContent = money(total);
     $('send-order').disabled = count === 0;
+    $('ship-warn').hidden = !ids.some(function(id){ return byId[id].cat === 'et'; });
     $('cart-items').innerHTML = ids.length ? ids.map(function(id){
       var p = byId[id], q = cart[id];
       return '<div class="line"><div><strong>'+p.name+'</strong><div class="meta">'+p.unit+' · '+money(p.price)+'</div></div>' +
@@ -430,6 +443,7 @@ footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:cent
       lines.push('• ' + q + ' × ' + p.name + ' (' + p.unit + ') = ' + money(q * p.price));
     });
     lines.push('', 'Toplam: ' + money(total));
+    if(Object.keys(cart).some(function(id){ return byId[id].cat === 'et'; })) lines.push('(Siparişte taze et var; teslimat adresim Erzurum içinde.)');
     var note = $('cart-note').value.trim(); if(note) lines.push('Not: ' + note);
     window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
   });
