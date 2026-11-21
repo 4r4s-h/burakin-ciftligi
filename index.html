@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Burak'ın Çiftliği</title>
+<meta name="description" content="Burak'ın Çiftliği: köy tereyağı, peynir çeşitleri, sucuk, pastırma ve bal. Çiftlikten kapınıza doğal şarküteri ürünleri.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burak'ın Çiftliği">
+<meta property="og:title" content="Burak'ın Çiftliği">
+<meta property="og:description" content="Köy tereyağı, peynir çeşitleri, sucuk, pastırma ve bal. Çiftlikten sofranıza.">
+<meta property="og:url" content="https://4r4s-h.github.io/burakin-ciftligi/">
+<meta property="og:image" content="https://4r4s-h.github.io/burakin-ciftligi/img/onizleme.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f1e6; --surface:#fffaf1; --ink:#2b2118; --muted:#6e5d4c; --line:#e3d6c1;
+  --accent:#9c3d1f; --accent-ink:#fffaf1; --butter:#e9b949; --leaf:#4f6b3a;
+  --f-display:"Fraunces", Georgia, serif; --f-body:"Work Sans", system-ui, sans-serif;
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:40px; --s6:72px;
+  --r:14px; --max:1120px;
+  --gut:max(16px, env(safe-area-inset-left));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1c1712; --surface:#262019; --ink:#f3eadc; --muted:#b8a690; --line:#3a3027;
+    --accent:#e07a4f; --accent-ink:#1c1712; --butter:#f0c562; --leaf:#9cbf7f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1c1712; --surface:#262019; --ink:#f3eadc; --muted:#b8a690; --line:#3a3027;
+  --accent:#e07a4f; --accent-ink:#1c1712; --butter:#f0c562; --leaf:#9cbf7f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important; animation:none!important}}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:17px; line-height:1.6}
+h1,h2,h3{font-family:var(--f-display); line-height:1.15; margin:0 0 var(--s3)}
+h1{font-size:clamp(2.3rem, 6vw, 4rem)}
+h2{font-size:clamp(1.8rem, 4vw, 2.6rem)}
+h3{font-size:1.2rem}
+p{margin:0 0 var(--s3)}
+a{color:var(--accent)}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gut)}
+section{padding:var(--s6) 0}
+.eyebrow{font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--leaf); font-weight:600; margin-bottom:var(--s2)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:var(--s2); border:0; border-radius:999px; padding:12px 22px; font:600 1rem var(--f-body); cursor:pointer; text-decoration:none; background:var(--accent); color:var(--accent-ink)}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent; color:var(--ink); border:1.5px solid var(--line)}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+:focus-visible{outline:3px solid var(--butter); outline-offset:2px}
+
+/* Header */
+header{position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:var(--s3); height:64px}
+.logo{font-family:var(--f-display); font-weight:700; font-size:1.3rem; color:var(--ink); text-decoration:none; white-space:nowrap}
+.logo span{color:var(--accent)}
+.nav ul{display:flex; gap:var(--s4); list-style:none; margin:0; padding:0}
+.nav ul a{color:var(--ink); text-decoration:none; font-weight:500}
+.nav ul a:hover{color:var(--accent)}
+.cart-btn{position:relative; padding:10px 18px}
+.cart-count{background:var(--butter); color:#2b2118; border-radius:999px; min-width:22px; height:22px; font-size:.8rem; display:inline-grid; place-items:center; padding:0 6px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* Hero */
+.hero{padding:var(--s6) 0 var(--s5)}
+.hero-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:var(--s5); align-items:center}
+.hero p.lead{font-size:1.2rem; color:var(--muted); max-width:34ch}
+.hero-actions{display:flex; flex-wrap:wrap; gap:var(--s3); margin-top:var(--s4)}
+.hero-card{display:grid; grid-template-columns:1fr 1fr; gap:var(--s3)}
+.tile{position:relative; overflow:hidden; border-radius:var(--r); padding:var(--s3); min-height:170px; display:flex; flex-direction:column; justify-content:flex-end; font-family:var(--f-display); font-weight:700; font-size:1.2rem; color:#fff; text-decoration:none; background:#3a3027}
+.tile img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+.tile::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(20,14,8,.75), rgba(20,14,8,0) 60%)}
+.tile span{position:relative; z-index:1; text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.tile small{display:block; font-family:var(--f-body); font-weight:500; font-size:.85rem; opacity:.9}
+.tile:hover img{transform:scale(1.05)}
+.badges{display:flex; flex-wrap:wrap; gap:var(--s2) var(--s4); margin-top:var(--s4); color:var(--muted); font-size:.95rem}
+.badges span::before{content:"✓ "; color:var(--leaf); font-weight:700}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+
+/* Products */
+.section-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:end; gap:var(--s3); margin-bottom:var(--s4)}
+.filters{display:flex; flex-wrap:wrap; gap:var(--s2)}
+.filters button{border:1.5px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:8px 16px; font:500 .95rem var(--f-body); cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:var(--s4)}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column}
+.card .photo{position:relative; aspect-ratio:4/3; background:var(--line); overflow:hidden}
+.card .photo img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease}
+.card:hover .photo img{transform:scale(1.04)}
+.card .tag{position:absolute; top:var(--s3); left:var(--s3); background:var(--surface); color:var(--ink); border-radius:999px; padding:4px 12px; font-size:.75rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase}
+
+/* Farm banner */
+.farm{position:relative; min-height:clamp(320px, 50vw, 520px); display:flex; align-items:flex-end; color:#fff; overflow:hidden}
+.farm > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.farm::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(20,14,8,.8), rgba(20,14,8,.1) 65%)}
+.farm .wrap{position:relative; z-index:1; width:100%}
+.farm .eyebrow{color:#cfe3b8}
+.farm h2{max-width:20ch}
+.farm p{max-width:60ch; color:rgba(255,255,255,.9)}
+.credits{font-size:.8rem}
+/* Hero over farm photo */
+.hero-farm{min-height:min(88vh, 760px); padding:var(--s6) 0}
+.hero-farm::after{background:linear-gradient(to top, rgba(20,14,8,.85) 10%, rgba(20,14,8,.35) 60%, rgba(20,14,8,.2))}
+.hero-farm h1{max-width:16ch}
+.hero-farm .lead{font-size:1.2rem; max-width:44ch}
+.hero-farm .badges{color:rgba(255,255,255,.9)}
+.hero-farm .badges span::before{color:#cfe3b8}
+.btn.ghost.light{color:#fff; border-color:rgba(255,255,255,.6)}
+.cats{padding:var(--s5) 0 0}
+.cat-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--s3)}
+.cat-grid .tile{min-height:200px}
+@media (max-width:860px){.cat-grid{grid-template-columns:1fr 1fr} .cat-grid .tile{min-height:150px}}
+
+/* Then & now */
+.then-now{display:grid; grid-template-columns:1fr 1fr; gap:var(--s3); align-items:start}
+.then-now figure{margin:0}
+.then-now figure:last-child{margin-top:var(--s5)}
+.then-now img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:var(--r); display:block}
+.then-now figcaption{margin-top:var(--s2); font-family:var(--f-display); font-weight:700; font-size:1.2rem}
+.then-now figcaption small{display:block; font-family:var(--f-body); font-weight:400; font-size:.9rem; color:var(--muted)}
+
+.card .body{padding:var(--s3) var(--s3) var(--s4); display:flex; flex-direction:column; gap:var(--s2); flex:1}
+.card h3{margin:0}
+.card p{color:var(--muted); font-size:.95rem; margin:0; flex:1}
+.card .row{display:flex; justify-content:space-between; align-items:center; gap:var(--s2); margin-top:var(--s2)}
+.price{font-family:var(--f-display); font-weight:700; font-size:1.3rem}
+.price small{font-family:var(--f-body); font-weight:400; font-size:.85rem; color:var(--muted)}
+.card .btn{padding:9px 16px; font-size:.92rem}
+.note{color:var(--muted); font-size:.9rem; margin-top:var(--s4)}
+
+/* Story / steps */
+.alt{background:var(--surface); border-block:1px solid var(--line)}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:var(--s5); align-items:start}
+.steps{display:grid; gap:var(--s3); counter-reset:s; list-style:none; padding:0; margin:0}
+.steps li{display:grid; grid-template-columns:44px 1fr; gap:var(--s3); align-items:start}
+.steps li::before{counter-increment:s; content:counter(s); width:44px; height:44px; border-radius:50%; background:var(--butter); color:#2b2118; display:grid; place-items:center; font-family:var(--f-display); font-weight:700; font-size:1.2rem}
+.steps strong{display:block}
+.steps span{color:var(--muted)}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line); padding:var(--s3) 0}
+summary{cursor:pointer; font-weight:600; font-size:1.05rem; list-style:none; display:flex; justify-content:space-between; gap:var(--s3)}
+summary::after{content:"+"; color:var(--accent); font-size:1.4rem; line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:var(--s2) 0 0; color:var(--muted)}
+
+/* Contact */
+.contact-list{list-style:none; padding:0; margin:0; display:grid; gap:var(--s3)}
+.contact-list li{background:var(--bg); border:1px solid var(--line); border-radius:var(--r); padding:var(--s3)}
+.contact-list b{display:block; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--leaf)}
+footer{padding:var(--s5) 0; color:var(--muted); font-size:.9rem; text-align:center}
+
+/* Cart drawer */
+.drawer-bg{position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.drawer{position:fixed; top:0; right:0; bottom:0; width:min(420px, 100%); background:var(--surface); z-index:50; transform:translateX(100%); transition:transform .25s ease; display:flex; flex-direction:column; border-left:1px solid var(--line)}
+.open .drawer-bg{opacity:1; pointer-events:auto}
+.open .drawer{transform:none}
+.drawer-head{display:flex; justify-content:space-between; align-items:center; padding:var(--s3) var(--s4); border-bottom:1px solid var(--line)}
+.drawer-head h2{font-size:1.5rem; margin:0}
+.icon-btn{background:none; border:0; color:var(--ink); font-size:1.6rem; cursor:pointer; line-height:1; padding:var(--s2)}
+.drawer-items{flex:1; overflow-y:auto; padding:var(--s3) var(--s4)}
+.line{display:grid; grid-template-columns:1fr auto; gap:var(--s2); padding:var(--s3) 0; border-bottom:1px solid var(--line)}
+.line .meta{color:var(--muted); font-size:.9rem}
+.qty{display:flex; align-items:center; gap:var(--s2)}
+.qty button{width:32px; height:32px; border-radius:50%; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); font-size:1.1rem; cursor:pointer}
+.empty{color:var(--muted); text-align:center; padding:var(--s5) 0}
+.drawer-foot{padding:var(--s3) var(--s4) calc(var(--s4) + env(safe-area-inset-bottom)); border-top:1px solid var(--line); display:grid; gap:var(--s3)}
+.total{display:flex; justify-content:space-between; font-family:var(--f-display); font-size:1.3rem; font-weight:700}
+.drawer-foot label{font-size:.9rem; color:var(--muted)}
+.drawer-foot textarea{width:100%; margin-top:var(--s1); border:1.5px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); font:inherit; font-size:.95rem; padding:var(--s2) var(--s3); resize:vertical; min-height:64px}
+.toast{position:fixed; left:50%; bottom:calc(24px + env(safe-area-inset-bottom)); transform:translate(-50%, 20px); background:var(--ink); color:var(--bg); padding:10px 18px; border-radius:999px; font-weight:500; opacity:0; transition:.2s; z-index:60; pointer-events:none; max-width:calc(100% - 32px); text-align:center}
+.toast.show{opacity:1; transform:translate(-50%, 0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#basla">Burak'ın <span>Çiftliği</span></a>
+    <ul>
+      <li><a href="#urunler">Ürünler</a></li>
+      <li><a href="#hikaye">Hikâyemiz</a></li>
+      <li><a href="#siparis">Nasıl Sipariş</a></li>
+      <li><a href="#sss">SSS</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+    <button class="btn cart-btn" id="open-cart" aria-label="Sepeti aç">Sepet <span class="cart-count" id="cart-count">0</span></button>
+  </div>
+</header>
+
+<main id="basla">
+  <section class="farm hero-farm" aria-labelledby="hero-h">
+    <img src="img/ciftlik.jpg" alt="Dağ eteğindeki yeşil merada otlayan inekler">
+    <div class="wrap">
+      <div class="eyebrow">Çiftlikten sofranıza</div>
+      <h1 id="hero-h">Gerçek tereyağı, olgun peynir, bildiğiniz tat.</h1>
+      <p class="lead">Kendi hayvanlarımızın sütünden yaptığımız tereyağı ve peynirleri, geleneksel yöntemlerle hazırlanan sucuk, pastırma ve süzme balı doğrudan size gönderiyoruz.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#urunler">Ürünleri incele</a>
+        <a class="btn ghost light" href="#siparis">Nasıl sipariş verilir?</a>
+      </div>
+      <div class="badges"><span>Katkısız</span><span>Soğuk zincirle kargo</span><span>Taze üretim</span></div>
+    </div>
+  </section>
+
+  <section class="cats" aria-label="Kategoriler">
+    <div class="wrap cat-grid">
+      <a class="tile" href="#urunler" data-go="tereyagi"><img src="img/tereyagi.jpg" alt="Tabakta taze tereyağı ve köy ekmeği"><span>Tereyağı<small>Yayıkta çalkalanmış</small></span></a>
+      <a class="tile" href="#urunler" data-go="peynir"><img src="img/kahvalti.jpg" alt="Beyaz peynir, kaşar, zeytin ve domatesle kahvaltı tabağı"><span>Peynir<small>Olgunlaştırılmış</small></span></a>
+      <a class="tile" href="#urunler" data-go="sarkuteri"><img src="img/sarkuteri.jpg" alt="Kurumaya asılmış sucuk ve et ürünleri"><span>Şarküteri<small>Sucuk ve pastırma</small></span></a>
+      <a class="tile" href="#urunler" data-go="bal"><img src="img/bal.jpg" alt="Çiçekler arasında bir kavanoz bal"><span>Bal<small>Süzme ve petek</small></span></a>
+    </div>
+  </section>
+
+  <section id="urunler" aria-labelledby="urunler-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Ürünlerimiz</div>
+          <h2 id="urunler-h">Ne almak istersiniz?</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Kategoriye göre süz" id="filters">
+          <button type="button" data-cat="hepsi" aria-pressed="true">Hepsi</button>
+          <button type="button" data-cat="tereyagi" aria-pressed="false">Tereyağı</button>
+          <button type="button" data-cat="peynir" aria-pressed="false">Peynir</button>
+          <button type="button" data-cat="sarkuteri" aria-pressed="false">Şarküteri</button>
+          <button type="button" data-cat="bal" aria-pressed="false">Bal</button>
+        </div>
+      </div>
+      <div class="grid" id="product-grid"></div>
+      <p class="note">Fiyatlara KDV dahildir. Stok durumu mevsime göre değişebilir; siparişinizi onaylarken size bilgi veririz.</p>
+    </div>
+  </section>
+
+
+  <section id="hikaye" class="alt" aria-labelledby="hikaye-h">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow">Hikâyemiz</div>
+        <h2 id="hikaye-h">Dünün tarifi, bugünün özeni.</h2>
+        <p>Burak'ın Çiftliği, ailemizden kalan topraklarda, taş bir ahır ve birkaç inekle başladı. Tereyağını yayıkta çalkalamayı, peyniri sabırla olgunlaştırmayı orada öğrendik.</p>
+        <p>Bugün aynı tarifleri temiz ve modern üretim alanımızda uyguluyoruz. Hayvanlarımız hâlâ merada otluyor, sütümüz aynı gün işleniyor. Raf ömrünü uzatan katkılar kullanmıyor, az ve taze üretip siparişlerinizi hazırlanır hazırlanmaz yola çıkarıyoruz.</p>
+      </div>
+      <div class="then-now">
+        <figure><img src="img/dun.jpg" alt="Taş duvarlarla çevrili eski çiftlik binaları" loading="lazy"><figcaption>Dün<small>Taş ahırda, elle</small></figcaption></figure>
+        <figure><img src="img/bugun.jpg" alt="Temiz bir odada raflarda olgunlaşan peynirler" loading="lazy"><figcaption>Bugün<small>Hijyenik olgunlaştırma odasında</small></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="siparis" aria-labelledby="siparis-h">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow">Nasıl sipariş verilir?</div>
+        <h2 id="siparis-h">Üç adımda kapınızda.</h2>
+        <p style="color:var(--muted)">Üye olmanız ya da kart bilgisi girmeniz gerekmez. Siparişinizi WhatsApp'tan onaylıyoruz.</p>
+      </div>
+      <ol class="steps">
+        <li><div><strong>Sepetinizi hazırlayın</strong><span>Ürünleri seçip adetlerini belirleyin.</span></div></li>
+        <li><div><strong>WhatsApp'tan gönderin</strong><span>"WhatsApp ile sipariş ver" butonu sipariş listenizi hazır mesaj olarak açar.</span></div></li>
+        <li><div><strong>Onay ve kargo</strong><span>Adres ve ödeme bilgisini yazışarak netleştirir, siparişinizi soğuk zincirle kargoya veririz.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="sss" class="alt" aria-labelledby="sss-h">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow">Sıkça sorulanlar</div>
+        <h2 id="sss-h">Merak ettikleriniz</h2>
+      </div>
+      <div>
+        <details><summary>Kargo ne kadar sürer?</summary><p>Siparişler genellikle 1–2 iş günü içinde kargoya verilir ve çoğu ile 1–3 iş gününde ulaşır.</p></details>
+        <details><summary>Ürünler bozulmadan gelir mi?</summary><p>Tereyağı, peynir ve şarküteri ürünlerini buz aküleriyle, yalıtımlı kutularda gönderiyoruz.</p></details>
+        <details><summary>Ödemeyi nasıl yapıyorum?</summary><p>Siparişinizi onayladıktan sonra havale/EFT ile ödeme yapabilirsiniz. Diğer seçenekleri WhatsApp'tan sorabilirsiniz.</p></details>
+        <details><summary>Ücretsiz kargo var mı?</summary><p>Belirli bir tutarın üzerindeki siparişlerde kargo ücretsizdir. Güncel limiti sipariş sırasında iletiyoruz.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim" aria-labelledby="iletisim-h">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow">İletişim</div>
+        <h2 id="iletisim-h">Bize ulaşın</h2>
+        <p style="color:var(--muted)">Toptan alım, özel sipariş ya da ürünlerle ilgili sorularınız için yazmanız yeterli.</p>
+      </div>
+      <ul class="contact-list">
+        <li><b>WhatsApp / Telefon</b><a id="contact-wa" href="https://wa.me/905349849521">+90 534 984 95 21</a></li>
+        <li><b>E-posta</b><a href="mailto:siparis@burakinciftligi.com">siparis@burakinciftligi.com</a></li>
+        <li><b>Adres</b>Gerek Mah. No:6, Horasan / Erzurum</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Burak'ın Çiftliği. Tüm hakları saklıdır.
+    <p class="credits">Fotoğraflar: Marine Le Gac, Victoria Morgan, Lee Vue, Edi Libedinsky, Anita Austvika, Cristina Marin, Wolfgang Hasselmann, Konrad Nowacki, Katrin Leinfellner / <a href="https://unsplash.com">Unsplash</a>; Tugay Aydın / <a href="https://www.pexels.com">Pexels</a></p>
+  </div>
+</footer>
+
+<div id="cart-root">
+  <div class="drawer-bg" id="drawer-bg"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-head">
+      <h2 id="cart-title">Sepetiniz</h2>
+      <button class="icon-btn" id="close-cart" aria-label="Sepeti kapat">×</button>
+    </div>
+    <div class="drawer-items" id="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="total"><span>Toplam</span><span id="cart-total">0 ₺</span></div>
+      <label for="cart-note">Not (isteğe bağlı)
+        <textarea id="cart-note" placeholder="Örn. teslimat günü tercihi"></textarea>
+      </label>
+      <button class="btn" id="send-order" disabled>WhatsApp ile sipariş ver</button>
+    </div>
+  </aside>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  // Sipariş mesajlarının gideceği WhatsApp numarası: ülke koduyla, boşluksuz (örn. 905321234567).
+  var WHATSAPP = '905349849521';
+
+  // Ürün listesi. Fiyatlar örnektir; gerçek fiyatlarla değiştirin.
+  var PRODUCTS = [
+    {id:'tereyagi-koy',  cat:'tereyagi',  name:'Köy Tereyağı',        unit:'500 g', price:420, desc:'İnek sütü kaymağından, tuzsuz ve katkısız.', img:'tereyagi.jpg', alt:'Tabakta köy tereyağı'},
+    {id:'tereyagi-yayik',cat:'tereyagi',  name:'Yayık Tereyağı',      unit:'500 g', price:480, desc:'Yoğurdun yayıkta çalkalanmasıyla elde edilir; hafif ekşimsi.', img:'tereyagi.jpg', alt:'Tabakta yayık tereyağı'},
+    {id:'peynir-beyaz',  cat:'peynir',    name:'Tam Yağlı Beyaz Peynir',unit:'1 kg', price:520, desc:'Salamurada en az altı ay dinlendirilmiş.', img:'kahvalti.jpg', alt:'Kahvaltı tabağında beyaz peynir'},
+    {id:'peynir-kasar',  cat:'peynir',    name:'Eski Kaşar',          unit:'500 g', price:390, desc:'Bir yıl olgunlaşmış, keskin ve aromatik.', img:'peynir.jpg', alt:'Ahşap tahtada kaşar ve peynir dilimleri'},
+    {id:'peynir-tulum',  cat:'peynir',    name:'Tulum Peyniri',       unit:'500 g', price:360, desc:'Ufalanan dokusu ve yoğun tadıyla kahvaltıların yıldızı.', img:'kahvalti.jpg', alt:'Kahvaltı tabağında peynir çeşitleri'},
+    {id:'peynir-orgu',   cat:'peynir',    name:'Örgü Peyniri',        unit:'500 g', price:280, desc:'El ile örülmüş, çörekotlu.', img:'peynir.jpg', alt:'Ahşap tahtada peynir çeşitleri'},
+    {id:'sucuk-kasap',   cat:'sarkuteri', name:'Kasap Sucuk',         unit:'500 g', price:450, desc:'Dana etinden, bol baharatlı, doğal bağırsakta kurutulmuş.', img:'sucuk.jpg', alt:'Ahşap tahtada at nalı sucuk ve sucuk dilimleri'},
+    {id:'pastirma',      cat:'sarkuteri', name:'Pastırma',            unit:'250 g', price:520, desc:'Çemeni bol, ince dilimlenmiş dana pastırma.', img:'sarkuteri.jpg', alt:'Kurumaya asılmış et ürünleri'},
+    {id:'kavurma',       cat:'sarkuteri', name:'Kavurma',             unit:'500 g', price:600, desc:'Kendi yağında pişirilmiş, vakumlu paketlenmiş.', img:'sarkuteri.jpg', alt:'Şarküteri ürünleri'},
+    {id:'bal-cicek',     cat:'bal',       name:'Süzme Çiçek Balı',    unit:'850 g', price:550, desc:'Yayla çiçeklerinden, ısıl işlem görmemiş.', img:'bal.jpg', alt:'Çiçekler arasında süzme bal kavanozu'},
+    {id:'bal-kestane',   cat:'bal',       name:'Kestane Balı',        unit:'850 g', price:750, desc:'Koyu renkli, hafif acımsı ve mineral açısından zengin.', img:'bal.jpg', alt:'Kavanozda koyu renkli bal'},
+    {id:'bal-petek',     cat:'bal',       name:'Petek Bal',           unit:'1 kg',  price:900, desc:'Çerçeveden kesilmiş, doğal haliyle.', img:'petek.jpg', alt:'Yakın çekim petek bal'}
+  ];
+  var CAT_LABEL = {tereyagi:'Tereyağı', peynir:'Peynir', sarkuteri:'Şarküteri', bal:'Bal'};
+
+  var $ = function(id){ return document.getElementById(id); };
+  var fmt = new Intl.NumberFormat('tr-TR');
+  var money = function(n){ return fmt.format(n) + ' ₺'; };
+  var byId = {}; PRODUCTS.forEach(function(p){ byId[p.id] = p; });
+
+  // Sepet: {ürünId: adet}. Tarayıcıda hatırlanır; depolama kapalıysa sessizce çalışmaya devam eder.
+  var cart = {};
+  try { cart = JSON.parse(localStorage.getItem('bc-cart')) || {}; } catch(e){ cart = {}; }
+  Object.keys(cart).forEach(function(k){ if(!byId[k] || !(cart[k] > 0)) delete cart[k]; });
+  function save(){ try { localStorage.setItem('bc-cart', JSON.stringify(cart)); } catch(e){} }
+
+  // Ürün kartları
+  var grid = $('product-grid');
+  grid.innerHTML = PRODUCTS.map(function(p){
+    return '<article class="card" data-cat="'+p.cat+'">' +
+      '<div class="photo"><img src="img/'+p.img+'" alt="'+p.alt+'" loading="lazy" width="1000" height="666"><span class="tag">'+CAT_LABEL[p.cat]+'</span></div>' +
+      '<div class="body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>' +
+      '<div class="row"><span class="price">'+money(p.price)+' <small>/ '+p.unit+'</small></span>' +
+      '<button class="btn" type="button" data-add="'+p.id+'" aria-label="'+p.name+' sepete ekle">Sepete ekle</button></div></div></article>';
+  }).join('');
+
+  grid.addEventListener('click', function(e){
+    var b = e.target.closest('[data-add]'); if(!b) return;
+    var id = b.getAttribute('data-add');
+    cart[id] = (cart[id] || 0) + 1; save(); render();
+    toast(byId[id].name + ' sepete eklendi');
+  });
+
+  // Kategori süzgeci
+  function filter(cat){
+    $('filters').querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x.getAttribute('data-cat') === cat ? 'true' : 'false'); });
+    grid.querySelectorAll('.card').forEach(function(c){ c.hidden = cat !== 'hepsi' && c.getAttribute('data-cat') !== cat; });
+  }
+  $('filters').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-cat]'); if(b) filter(b.getAttribute('data-cat'));
+  });
+  // Girişteki kategori fotoğrafları: tıklanınca o kategoriyi süzerek ürünlere iner.
+  document.querySelectorAll('[data-go]').forEach(function(a){
+    a.addEventListener('click', function(){ filter(a.getAttribute('data-go')); });
+  });
+
+  // Sepet çizimi
+  function render(){
+    var ids = Object.keys(cart), count = 0, total = 0;
+    ids.forEach(function(id){ count += cart[id]; total += cart[id] * byId[id].price; });
+    $('cart-count').textContent = count;
+    $('cart-total').textContent = money(total);
+    $('send-order').disabled = count === 0;
+    $('cart-items').innerHTML = ids.length ? ids.map(function(id){
+      var p = byId[id], q = cart[id];
+      return '<div class="line"><div><strong>'+p.name+'</strong><div class="meta">'+p.unit+' · '+money(p.price)+'</div></div>' +
+        '<div class="qty"><button type="button" data-dec="'+id+'" aria-label="'+p.name+' azalt">−</button><span aria-live="polite">'+q+'</span>' +
+        '<button type="button" data-inc="'+id+'" aria-label="'+p.name+' artır">+</button></div></div>';
+    }).join('') : '<p class="empty">Sepetiniz boş. Ürünlerden seçerek başlayın.</p>';
+  }
+  $('cart-items').addEventListener('click', function(e){
+    var inc = e.target.closest('[data-inc]'), dec = e.target.closest('[data-dec]');
+    if(inc){ var i = inc.getAttribute('data-inc'); cart[i]++; }
+    else if(dec){ var d = dec.getAttribute('data-dec'); cart[d]--; if(cart[d] <= 0) delete cart[d]; }
+    else return;
+    save(); render();
+  });
+
+  // Sepet çekmecesi
+  var root = $('cart-root'), lastFocus = null;
+  function openCart(){ lastFocus = document.activeElement; root.classList.add('open'); $('drawer').setAttribute('aria-hidden','false'); $('close-cart').focus(); }
+  function closeCart(){ root.classList.remove('open'); $('drawer').setAttribute('aria-hidden','true'); if(lastFocus) lastFocus.focus(); }
+  $('open-cart').addEventListener('click', openCart);
+  $('close-cart').addEventListener('click', closeCart);
+  $('drawer-bg').addEventListener('click', closeCart);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && root.classList.contains('open')) closeCart(); });
+
+  // WhatsApp sipariş mesajı
+  $('send-order').addEventListener('click', function(){
+    var lines = ['Merhaba, Burak\'ın Çiftliği\'nden sipariş vermek istiyorum:', ''], total = 0;
+    Object.keys(cart).forEach(function(id){
+      var p = byId[id], q = cart[id]; total += q * p.price;
+      lines.push('• ' + q + ' × ' + p.name + ' (' + p.unit + ') = ' + money(q * p.price));
+    });
+    lines.push('', 'Toplam: ' + money(total));
+    var note = $('cart-note').value.trim(); if(note) lines.push('Not: ' + note);
+    window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+  });
+
+  $('contact-wa').href = 'https://wa.me/' + WHATSAPP;
+  $('year').textContent = new Date().getFullYear();
+
+  var tt;
+  function toast(msg){ var t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ t.classList.remove('show'); }, 1800); }
+
+  render();
+})();
+</script>
+</body>
+</html>
